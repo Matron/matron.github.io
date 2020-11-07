@@ -109,7 +109,7 @@ a {
   right: 0;
   margin: auto;
   z-index: 1;
-  animation: planeAnimation 3s cubic-bezier(0.25, 1, 0.5, 1);
+  animation: planeAnimation 3s cubic-bezier(0.25, 1, 0.5, 1) 1s;
   animation-fill-mode: forwards;
 }
 
