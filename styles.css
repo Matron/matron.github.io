@@ -43,13 +43,23 @@ a {
 /* INTRO PAGE */
 #intro {
   min-height: 100vh;
-  background: cornsilk;
-  background: linear-gradient( transparent, rgba(0,0,0,0.5)),             
-              url('./assets/images/background.jpg');
+  position: relative;
+  z-index: 0;
+}
+
+.background {
+/*   min-height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+   */
+  background: url('./assets/images/background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 5%;
+  height: 100vh;
 }
 
 .main-nav {
@@ -71,33 +81,44 @@ a {
   padding: 1rem 0;
 }
 
-.plane-container {
-  width: 100%;
-  height: 39%;
+.foreground {
+  /* background: royalblue; */
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
-  overflow: hidden;
-}
-.overlay {
-  position: absolute;
-  top: 0;
+  right: 0;
+  z-index: 1;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6)), url('./assets/images/foreground.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+/*   position: relative;
+  bottom: 100vh;
   left: 0;
   right: 0;
   height: 100vh;
-  background: url('./assets/images/plane.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  animation: planeAnimation 4s cubic-bezier(0.25, 1, 0.5, 1);
+ */
+}
+
+.logo {
+  position: absolute;
+  width: 10vw;
+  max-width: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  animation: planeAnimation 3s cubic-bezier(0.25, 1, 0.5, 1);
+  animation-fill-mode: forwards;
 }
 
 @keyframes planeAnimation {
   from {
-    transform: translate(0%, 250%);
+    top: 500px
   }
   to {
-    transform: translate(0, 0);
+    top: 20vh;
   }
 }
 
